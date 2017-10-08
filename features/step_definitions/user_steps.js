@@ -2,13 +2,13 @@
 var seleniumWebdriver = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
 
-const { User } = require('../../models/user')
+const User = require('../../models/user')
 
 defineSupportCode(function({Given, When, Then}) {
-  Given('I am already signed up', function (callback) {
+  Given('I am already signed up with the username {string} and the password {string}', function (username, password, callback) {
    User.create({
-   	 username: 'test-user',
-   	 password: 'asdf12345'
+   	 username: username,
+   	 password: password
    })
    .then(() => callback())
  });

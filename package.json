@@ -9,9 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.1",
     "cucumber": "^3.0.0",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
-    "mongoose": "^4.11.8"
+    "jquery.cookie": "^1.4.1",
+    "mongoose": "^4.11.8",
+    "mongoose-bcrypt": "^1.5.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.1",

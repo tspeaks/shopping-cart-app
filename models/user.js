@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
 
+mongoose.Promise = global.Promise;
+
+
 const userSchema = mongoose.Schema({
   username: {type: String, required: true},
-  password: {type: String, required: true},
-  created: {type: Date, default: Date.now}
+  created: {type: Date, default: Date.now},
+  loggedIn: {}
 });
+
+userSchema.plugin(require('mongoose-bcrypt'));
 
 
 userSchema.methods.apiRepr = function() {
@@ -16,4 +21,4 @@ userSchema.methods.apiRepr = function() {
 
 const User = mongoose.model('users', userSchema);
 
-module.exports = {User};
+module.exports = User;
