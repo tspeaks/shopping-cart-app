@@ -29,9 +29,8 @@ opts.secretOrKey = process.env.PASSPORT_SECRET;
 opts.issuer = process.env.PASSPORT_ISSUER;
 opts.audience = process.env.PASSPORT_AUDIENCE;
 
-app.use('/sessions', sessions);
-app.use('/users', users);
 passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
+	console.log('whatever');
     User.findOne({id: jwt_payload.sub}, function(err, user) {
         if (err) {
             return done(err, false);
@@ -44,7 +43,9 @@ passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
         }
     });
 }));
-
+app.use(passport.initialize());
+app.use('/sessions', sessions);
+app.use('/users', users);
 mongoose.connect(process.env.MONGO_URL);
 
 var db = mongoose.connection;

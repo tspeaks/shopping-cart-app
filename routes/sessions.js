@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
 		if(user){
 			return user.verifyPassword(req.body.password);
 		} else {
-			res.send(403);
+			return false;
 		}
 	})
 	.then((valid) => {
@@ -26,12 +26,12 @@ router.post('/', (req, res) => {
 				token
 			});
 		} else {
-			res.send(403);
+			res.sendStatus(403);
 		}
 	})
 	.catch((err) => {
 		console.log(err);
-		res.send(500);
+		res.sendStatus(500);
 	})
 });
 

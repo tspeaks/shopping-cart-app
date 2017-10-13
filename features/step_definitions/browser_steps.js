@@ -1,12 +1,17 @@
 // features/step_definitions/browser_steps.js
+require('dotenv').config();
 var {until, By} = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
-var pages = {signup: 'http://localhost:3000/signup.html'}
+const jwt = require('jsonwebtoken');
+
+const User = require('../../models/user');
+var pages = {signup: 'http://localhost:3000/signup.html',
+             dashboard: 'http://localhost:3000/dashboard.html',
+             login: 'http://localhost:3000/login.html'}
 defineSupportCode(function({Given, When, Then}) {
-  Given("I am on the {string} page", function (page, callback) {
-          return this.driver.get(pages[page])
-           callback();
-          
+  Given("I am on the {string} page", function (page) {
+          console.log(page);
+          return this.driver.get(pages[page])    
          });
 
   When("I go to the login page", function() {
@@ -26,8 +31,8 @@ defineSupportCode(function({Given, When, Then}) {
            callback();
          });
 
- When('I press {string}', function (type, callback) {
-           this.driver.findElement(By.css("button[type='{type}'")).click()
+When('I press {string}', function (type, callback) {
+           this.driver.findElement(By.css(`#login>button`)).click();
            callback();
          });
 
@@ -49,6 +54,19 @@ defineSupportCode(function({Given, When, Then}) {
            })
            
          });
+
+Given('that I am logged in to my account', function (callback) {
+              User.create({
+               username: 'testuser',
+               password: 'testpass'
+             })
+              .then((user) => {
+                const token = jwt.sign({id:user.id}, process.env.PASSPORT_SECRET);
+                this.driver.manage().addCookie({token});
+                callback()
+              })
+         });
+
 
 
  });

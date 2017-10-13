@@ -1,74 +1,42 @@
-Feature: Dashboard
+Feature: Dashboard]
+	As a user
+	I want to be able to log in to the app
+	So that I can buy all the thingss
 	
-	Scenerio: Landing on the dashboard after initial sign-up
+	Scenario: Landing on the dashboard after initial sign-up
 		Given that I am logged in to my account
-		And I am on my dashboard page
-		And I have not completed an initial profile on sign-up
-		And I see an input field for my street address
-		And I see an input field for my city
-		And I see an input field for my state
-		And I see an input field for my zipcode
-		And I see an input field for my phone number
-		And I see an input for my email address
-		And I see a submit button
-		When I enter my street address
-		And I enter my city
-		And I enter my state
-		And I enter my zipcode
-		And I enter my phone number
-		And I enter my email address
-		And I hit submit
+		When I am on the 'dashboard' page
+		Then I should see a 'info' 'form'
+		And I should see a 'address' 'input'
+		And I should see a 'city' 'input'
+		And I should see a 'state' 'input'
+		And I should see a 'zipcode' 'input'
+		And I should see a 'phone-number' 'input'
+		And I should see a 'email' 'input'
+		And I should see a 'submit' 'button'
+		When I fill in the 'address' input with '123 Way'
+		When I fill in the 'city' input with 'Basicville'
+		When I fill in the 'state' input with 'Nebraskafornia'
+		When I fill in the 'zipcode' input with '12345'
+		When I fill in the 'phone-number' input with '012-345-6789'
+		When I fill in the 'email' input with 'your@mom.com'
+		And I press 'submit'
 		Then I am returned to my dashboard without the input fields
 		And a confirmation email is sent to my email address
 		And I see a message indicating that my profile is almost complete and that I must confirm my account creation via the confirmation email
 
-	/*Scenerio: Leaving the dashboard without completing the intitial profile
-		Given that I am logged in to my account
-		And I am on my dashboard page
-		And I have not completed an initial profile on sign-up
-		And I see an input field for my street address
-		And I see an input field for my city
-		And I see an input field for my state
-		And I see an input field for my zipcode
-		And I see an input field for my phone number
-		And I see an input for my email address
-		And I see a submit button
-		When I leave the dashboard
-		Then I am alerted that if I do not complete the initial profile I will be unable to purchase anything.*/
-
-	Scenerio: Go to Products page from Dashboard
+	Scenario: Go to Products page from Dashboard
 		Given that I am logged in to my account
 		And I am on my dashboard page
 		And I have completed an initial profile on sign-up
 		When I click on the link, "Products"
 		Then I should be taken to the View all products page
 
-	Scenerio: Go to My Cart page for Dashboard
+	Scenario: Go to My Cart page for Dashboard
 		Given that I am logged in to my account
 		And I am on my dashboard page
 		And I have completed an initial profile on sign-up
 		When I click on the link, "My Cart"
 		Then I should be taken to the page for My Cart
 
-	/*Scenerio: Edit my profile information
-		Given that I am logged in to my account
-		And I am on my dashboard page
-		And I have completed an initial profile on sign-up
-		When I click on the link to edit my profile information
-		Then I should see a new input field for my street address
-		And it is populated with my current street address as a placeholder
-		And I see a new input field for my city
-		And it is populated with my current city as a placeholder
-		And I see a new input field for my state
-		And it is populated with my current state as a placeholder
-		And I see a new input field for my zipcode
-		And it is populated with my current zipcode as a placeholder
-		And I see a new input field for my phone number
-		And it is populated with my current phone number as a placeholder
-		And I see a new input for my email address
-		And it is populated with my current email address as a placeholder
-		And I see a submit button
-		When I hit submit
-		Then I should return the dashboard to it's pre-edit profile state
-		And be alerted that my profile has been updated*/
-
+	
