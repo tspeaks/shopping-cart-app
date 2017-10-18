@@ -77,6 +77,7 @@ $(function () {
 	$("#info").submit(function (event) {
 		event.preventDefault();
 		console.log("i work");
+		console.log($.cookie('token'));
 		$.ajax( {
 			method: 'PUT',
 			url: 'http://localhost:3000/users/',
