@@ -1,9 +1,9 @@
 const express = require('express');
-const passport = require('../auth');
 const router = express.Router();
 
 const User = require('../models/user');
 
+const routes = (passport) => {
 router.post('/', (req, res) => {
 	const { username, password } = req.body;
 	User.create({username, password})
@@ -19,8 +19,8 @@ router.post('/', (req, res) => {
 router.put('/', passport.authenticate('jwt', { session: false }), (req, res) => {
 	const { address, city, state, 
 			zipcode, phone, email } = req.body;
-		console.log(req.get('Authorization'));
-	User.findByIdAndUpdate(req.params.id, { $set: {
+		console.log(req.body);
+	User.findByIdAndUpdate(req.user._id, { $set: {
 		address, city, state, 
 		zipcode, phone, email}})
 	.then((user) => {
@@ -31,5 +31,7 @@ router.put('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 		res.send(403);
 	})
 });
-module.exports = router;
+return router;
+}
+module.exports = routes;
 

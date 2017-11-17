@@ -10,12 +10,15 @@ var pages = {signup: 'http://localhost:3000/signup.html',
              login: 'http://localhost:3000/login.html'}
 defineSupportCode(function({Given, When, Then}) {
   Given("I am on the {string} page", function (page) {
-          console.log(page);
           return this.driver.get(pages[page])    
          });
 
   When("I go to the login page", function() {
     return this.driver.get('http://localhost:3000/login.html');
+  });
+
+  Given("I go to the dashboard page", function() {
+    return this.driver.get('http://localhost:3000/dashboard.html');
   });
 
   Then("I should see a {string} {string}", function(id, tag, callback) {
@@ -56,17 +59,30 @@ When('I press {string}', function (type, callback) {
          });
 
 Given('that I am logged in to my account', function (callback) {
-              User.create({
-               username: 'testuser',
-               password: 'testpass'
-             })
-              .then((user) => {
-                const token = jwt.sign({id:user.id}, process.env.PASSPORT_SECRET);
-                this.driver.manage().addCookie({token});
-                callback()
-              })
-         });
+     User.create({
+      username: 'someguy',
+      password: 'datpass'
+     })
+     .then(() => {
+       return this.driver.get('http://localhost:3000/login.html');
+      }).then(() => {
+        return  this.driver.findElement(By.css(`input#username`)).sendKeys('someguy')
+                
+     
+      }).then(() => {
+         return this.driver.findElement(By.css(`input#password`)).sendKeys('datpass')
+      
+      }).then(() => {
+        return this.driver.findElement(By.css(`#login>button`)).click();
+      }).then(() => {
+        callback();
+      })
 
+     });
+
+Then('I am returned to my dashboard without the input fields', function (callback) {
+      return this.driver.get('http://localhost:3000/dashboard.html');
+    });
 
 
  });

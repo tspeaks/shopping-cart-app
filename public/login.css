@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans Condensed",serif;
+}
+
+
+html, body, .container, .wrapper, .inner {
+	height: 100%;
+}
+
+#login {
+	
+	height: 300px;
+}
+
+.right {
+	text-align: right;
+}

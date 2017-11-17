@@ -5,7 +5,7 @@ Feature: Dashboard]
 	
 	Scenario: Landing on the dashboard after initial sign-up
 		Given that I am logged in to my account
-		When I am on the 'dashboard' page
+		When I go to the dashboard page
 		Then I should see a 'info' 'form'
 		And I should see a 'address' 'input'
 		And I should see a 'city' 'input'

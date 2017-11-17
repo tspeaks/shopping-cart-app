@@ -1,5 +1,4 @@
 require('dotenv').config();
-const passport = require('passport');
 const User = require('./models/user');
 const opts = {};
 
@@ -8,12 +7,11 @@ const JwtStrategy = require('passport-jwt').Strategy,
 
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.PASSPORT_SECRET;
-opts.issuer = process.env.PASSPORT_ISSUER;
-opts.audience = process.env.PASSPORT_AUDIENCE;
 
+const authService = (passport) => {
 passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
 	console.log('whatever');
-    User.findOne({id: jwt_payload.sub}, function(err, user) {
+    User.findOne({_id: jwt_payload.id}, function(err, user) {
         if (err) {
             return done(err, false);
         }
@@ -25,5 +23,6 @@ passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
         }
     });
 }));
+}
 
-module.exports = passport;
+module.exports = authService;

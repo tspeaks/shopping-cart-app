@@ -1,4 +1,11 @@
 
+if ($.cookie('token')) {
+	$('#profile-modal').modal( {
+		show: true
+	});
+	
+}
+
 // Login page form
 $(function () {
 
@@ -71,13 +78,11 @@ $(function () {
 		
 });
 
-//Signup page form
+//Dashboard form
 $(function () {
 
 	$("#info").submit(function (event) {
 		event.preventDefault();
-		console.log("i work");
-		console.log($.cookie('token'));
 		$.ajax( {
 			method: 'PUT',
 			url: 'http://localhost:3000/users/',
@@ -92,13 +97,14 @@ $(function () {
 			dataType: 'json',
 			headers: {
 				'Content-type': 'application/json',
-				'Authorization': `JWT ${$.cookie('token')}`
+				'Authorization': `bearer ${$.cookie('token')}`
 			}
 
 
 		})
 		.then((res) => { 
-			$.cookie('token', res.token);
+			console.log(res);
+			$('#profile-modal').modal("toggle");
 
 		}).fail((err) => {
 			console.log(err);

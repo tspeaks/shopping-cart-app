@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
-
+const routes = (passport) => {
 router.post('/', (req, res) => {
 	console.log("session");
 	let user;
@@ -34,5 +34,6 @@ router.post('/', (req, res) => {
 		res.sendStatus(500);
 	})
 });
-
-module.exports = router;
+return router;
+}
+module.exports = routes;
