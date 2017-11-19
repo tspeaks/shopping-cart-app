@@ -264,14 +264,14 @@ const totalPrice = function() {
 
 //Checkout Button
 $('#checkout').click(function() {
-	/*if(hat.count=0 && shirt.count=0 && hoodie.count=0 && mug.count=0 && mousepad.count=0) {
+	if(hat.count==0 && shirt.count==0 && hoodie.count==0 && mug.count==0 && mousepad.count==0) {
 		alert('You cannot check out without selecting any products to purchase');
-	} else {*/
+	} else {
 	sessionStorage.hat = JSON.stringify(hat);
 	sessionStorage.shirt = JSON.stringify(shirt);
 	sessionStorage.hoodie = JSON.stringify(hoodie);
 	sessionStorage.mug = JSON.stringify(mug);
 	sessionStorage.mousepad = JSON.stringify(mousepad);
 	window.location.replace('/checkout.html');
-	//}
+	}
 })

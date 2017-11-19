@@ -31,6 +31,22 @@ router.put('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 		res.send(403);
 	})
 });
+
+router.delete('/', (req, res) => {
+	const username = $.cookie('username');
+	User.remove({username})
+
+    .then(user => {
+    	console.log('success');
+		res.sendStatus(200);
+
+    })
+    .catch((err) => {
+        console.log(err);
+        res.send(403);
+    })
+});
+
 return router;
 }
 module.exports = routes;

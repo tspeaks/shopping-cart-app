@@ -9,7 +9,7 @@ $( document ).ready(function() {
 			method: 'POST',
 			url: 'http://localhost:3000/users',
 			data:JSON.stringify({
-				username: $('#username').val(),
+				username: username,
 				password: $('#password').val()
 			}),
 			dataType: 'json',
