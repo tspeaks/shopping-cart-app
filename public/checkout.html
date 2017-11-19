@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="login.css"/>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script src="/jquery.cookie/jquery.cookie.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<table id="checkoutTable">
+		<tr id="checkoutHat"></tr>
+			<td id="hatThumbnail"></td>
+			<td id="hatName"></td>
+			<td id="hatCount"></td>
+			<td id="hatPrice"></td>
+			<td id="hatRemove"></td>
+
+		<tr id="checkoutShirt"></tr>
+			<td id="shirtThumbnail"></td>
+			<td id="shirtName"></td>
+			<td id="shirtCount"></td>
+			<td id="shirtPrice"></td>
+			<td id="shirtRemove"></td>
+
+		<tr id="checkoutHoodie"></tr>
+			<td id="hoodieThumbnail"></td>
+			<td id="hoodieName"></td>
+			<td id="hoodieCount"></td>
+			<td id="hoodiePrice"></td>
+			<td id="hoodieRemove"></td>
+
+		<tr id="checkoutMug"></tr>
+			<td id="mugThumbnail"></td>
+			<td id="mugName"></td>
+			<td id="mugCount"></td>
+			<td id="mugPrice"></td>
+			<td id="mugRemove"></td>
+
+		<tr id="checkoutMousepad"></tr>
+			<td id="mousepadThumbnail"></td>
+			<td id="mousepadName"></td>
+			<td id="mousepadCount"></td>
+			<td id="mousepadPrice"></td>
+			<td id="mousepadRemove"></td>
+		
+	</table>
+
+	<form>
+		<label for="ccname">Name</label>
+		<input name="ccname" id="ccname">
+
+		<label for="ccnumber">Card #</label>
+		<input name="ccnumber" id="ccnumber">
+
+		<label for="cvc">CVC</label>
+		<input name="cvc" id="cvc">
+
+		<label for="zip">Billing Zipcode</label>
+		<input name="zip" id="zip">
+	</form>
+
+	<button id="purchase">Proceed with Checkout</button>
+
+	<script src="checkout.js"></script>
+</body>
+</html>

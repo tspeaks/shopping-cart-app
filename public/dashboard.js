@@ -1,9 +1,10 @@
 $( document ).ready(function() {
 
+//Username Cookie
 const username = $.cookie('username');
 
 
-
+//Shipping Info Modal
 if ($.cookie('token')) {
 	$('#profile-modal').modal( {
 		show: true
@@ -62,17 +63,22 @@ $(function () {
 //View Products
 
 //Hat
-const hat = {count:1, price: 10};
+const hat = {
+	count:0,
+	price: 10,
+	name: "Hat",
+	thumbnail: '../hat.jpg'
+};
 const onHatIncrease = function() {
 	hat.count++;
 }
 
 const onHatDecrease  = function() {
-	if(hat.count > 1) {
+	if(hat.count > 0) {
 	hat.count--;
 	}
 	else {
-		hat.count = 1;
+		hat.count = 0;
 	}
 
 
@@ -97,17 +103,22 @@ $('#hatToCart').click(function() {
 	$('#myCart').append(`<li>Hat</li>`);
 })
 //Shirt
-const shirt = {count:1, price: 15};
+const shirt = {
+	count:0,
+	price: 15,
+	name: "Shirt",
+	thumbnail: '../shirt.jpg'
+};
 
 const onShirtIncrease = function() {
 	shirt.count++;
 }
 const onShirtDecrease  = function() {
-	if(shirt.count > 1){
+	if(shirt.count > 0){
 	shirt.count--;
 	}
 	else {
-		shirt.count = 1;
+		shirt.count = 0;
 	}
 }
 const getShirtTotal =function() {
@@ -130,17 +141,22 @@ $('#shirtToCart').click(function() {
 	$('#myCart').append(`<li>Shirt</li>`);
 })
 //Hoodie
-const hoodie = {count:1, price: 20};
+const hoodie = {
+	count:0, 
+	price: 20,
+	name: "Hoodie",
+	thumbnail: '../hoodie.jpg'
+};
 const onHoodieIncrease = function() {
 	hoodie.count++;
 }
 
 const onHoodieDecrease  = function() {
-	if(hoodie.count > 1) {
+	if(hoodie.count > 0) {
 	hoodie.count--;
 	}
 	else {
-		hoodie.count = 1;
+		hoodie.count = 0;
 	}
 }
 
@@ -164,18 +180,23 @@ $('#hoodieToCart').click(function() {
 	$('#myCart').append(`<li>Hoodie</li>`);
 })
 //Mug
-const mug = {count:0, price: 10};
+const mug = {
+	count:0, 
+	price: 10,
+	name: "Mug",
+	thumbnail: '../mug.jpg'
+};
 const onMugIncrease = function() {
 	mug.count++;
 }
 
 const onMugDecrease  = function() {
-	if(mug.count > 1){
+	if(mug.count > 0){
 	mug.count--;
 	}
 	else {
-		mug.count = 1;
-	}
+		mug.count = 0;
+	}	
 }
 const getMugTotal =function() {
 	return mug.price*mug.count;
@@ -197,17 +218,22 @@ $('#mugToCart').click(function() {
 	$('#myCart').append(`<li>Mug</li>`);
 })
 //Mousepad
-const mousepad = {count:1, price: 20};
+const mousepad = {
+	count:0, 
+	price: 20,
+	name: "Mousepad",
+	thumbnail: '../mousepad.jpg'
+};
 const onMousepadIncrease = function() {
 	mousepad.count++;
 }
 
 const onMousepadDecrease = function() {
-	if(mousepad.count > 1) {
+	if(mousepad.count > 0) {
 	mousepad.count--;
 	}
 	else {
-		mousepad.count = 1;
+		mousepad.count = 0;
 	}
 }
 const getMousepadTotal =function() {
@@ -236,4 +262,16 @@ const totalPrice = function() {
 	getMousepadTotal();
 }
 
-//My Cart
+//Checkout Button
+$('#checkout').click(function() {
+	/*if(hat.count=0 && shirt.count=0 && hoodie.count=0 && mug.count=0 && mousepad.count=0) {
+		alert('You cannot check out without selecting any products to purchase');
+	} else {*/
+	sessionStorage.hat = JSON.stringify(hat);
+	sessionStorage.shirt = JSON.stringify(shirt);
+	sessionStorage.hoodie = JSON.stringify(hoodie);
+	sessionStorage.mug = JSON.stringify(mug);
+	sessionStorage.mousepad = JSON.stringify(mousepad);
+	window.location.replace('/checkout.html');
+	//}
+})

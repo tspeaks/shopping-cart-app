@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-
+	//Log-In
 	$("#login").submit(function (event) {
 		const username = $('#username').val()
 		event.preventDefault();
