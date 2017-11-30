@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-	<meta charset="UTF-8">
-	<title>Dashboard</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" href="dashboard.css"/>
-	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script src="/jquery.cookie/jquery.cookie.js"></script>
-	<!-- Bootstrap JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
-</head>
+<!-- saved from url=(0036)http://localhost:3000/dashboard.html -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-</head>
-<body>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="./Dashboard_files/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="./Dashboard_files/dashboard.css">
+	<script src="./Dashboard_files/jquery.min.js"></script>
+	<script src="./Dashboard_files/jquery.cookie.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<script src="./Dashboard_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+	
+
+<body class="modal-open" cz-shortcut-listen="true" data-gclp-initialized="true" data-gistbox-initialized="true">
 	<div class="container">
 		<div class="row wrapper">
 			<div class="col-md-12 inner">
 				<div class="row justify-content-center align-items-center inner">
-					<div class="modal" id="profile-modal" tabindex="-1" role="dialog">
+					<div class="modal in" id="profile-modal" tabindex="-1" role="dialog" style="display: block;">
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					      <div class="modal-header">
-        					<h4 class="modal-title">Please enter your contact and shipping information</h5>
+        					<h4 class="modal-title">Please enter your contact and shipping information</h4>
       					  </div>
 					      <div class="modal-body">
-							<form id="info" action="">
+							<form id="info" action="http://localhost:3000/dashboard.html">
 								<div class="form-group">
 									<label for="address">Address</label>
 									<input class="modal-input" name="address" id="address">
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="col-sm-10 card" id="dashboard">
-						<h4 class="card-title" id="welcome">Dashboard</h4>
+						<h4 class="card-title" id="welcome">Welcome tspeaks!</h4>
 							<div class="right">
 								<button class="btn btn-dark" type="button" id="remove">Cancel my Account</button>
 							</div>
@@ -77,7 +77,7 @@
 								  </thead>
 								  <tbody>
 									<tr id="hat">
-										<td><img id="hatPic" src="assets/hat.jpg"></td>
+										<td><img id="hatPic" src="./Dashboard_files/hat.jpg"></td>
 										<td>Hat</td>
 										<td id="hatPrice">$10</td>
 										<td><div class="btn-group" role="group"><button type="button" class="btn btn-secondary btn-sm" id="hatIncrease">+</button><button type="button" class="btn btn-secondary btn-sm" id="hatDecrease">-</button></div></td>
@@ -86,7 +86,7 @@
 									</tr>
 
 									<tr id="shirt">
-										<td><img src="assets/shirt.jpg"></td>
+										<td><img src="./Dashboard_files/shirt.jpg"></td>
 										<td>Shirt</td>
 										<td id="shirtPrice">$15</td>
 										<td><div class="btn-group" role="group"><button type="button" class="btn btn-secondary btn-sm" id="shirtIncrease">+</button><button type="button" class="btn btn-secondary btn-sm" id="shirtDecrease">-</button></div></td>
@@ -95,7 +95,7 @@
 									</tr>
 
 									<tr id="hoodie">
-										<td><img src="assets/hoodie.jpg"></td>
+										<td><img src="./Dashboard_files/hoodie.jpg"></td>
 										<td>Hoodie</td>
 										<td id="hoodiePrice">$20</td>
 										<td><div class="btn-group" role="group"><button type="button" class="btn btn-secondary btn-sm" id="hoodieIncrease">+</button><button type="button" class="btn btn-secondary btn-sm" id="hoodieDecrease">-</button></div></td>
@@ -104,7 +104,7 @@
 									</tr>
 
 									<tr id="mug">
-										<td><img src="assets/mug.jpg"></td>
+										<td><img src="./Dashboard_files/mug.jpg"></td>
 										<td>Mug</td>
 										<td id="mugPrice">$10</td>
 										<td><div class="btn-group" role="group"><button type="button" class="btn btn-secondary btn-sm" id="mugIncrease">+</button><button type="button" class="btn btn-secondary btn-sm" id="mugDecrease">-</button></div></td>
@@ -113,7 +113,7 @@
 									</tr>
 
 									<tr id="mousepad">
-										<td><img src="assets/mousepad.jpg"></td>
+										<td><img src="./Dashboard_files/mousepad.jpg"></td>
 										<td>Mousepad</td>
 										<td id="mousepadPrice">$20</td>
 										<td><div class="btn-group" role="group"><button type="button" class="btn btn-secondary btn-sm" id="mousepadIncrease">+</button><button type="button" class="btn btn-secondary btn-sm" id="mousepadDecrease">-</button></div></td>
@@ -139,6 +139,6 @@
 		</div>
 
 	
-	<script src="dashboard.js"></script>
-</body>
-</html>
+	<script src="./Dashboard_files/dashboard.js"></script>
+
+<div class="modal-backdrop in"></div><form id="gclp-frame-form" target="gclp-frame" method="post" style="display: none;"></form></body></html>

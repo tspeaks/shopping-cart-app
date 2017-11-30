@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
 
 userSchema.plugin(require('mongoose-bcrypt'));
 
-
+  loggedIn: {}
 userSchema.methods.apiRepr = function() {
   return {
     id: this._id,

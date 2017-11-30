@@ -25,13 +25,23 @@ $( document ).ready(function() {
 			window.location.replace('/dashboard.html');
 
 		}).fail((err) => {
+			$(".alert").show('fade');
 			console.log(err);
 		})
-
-
 		
 
 	});
 
+//Collapse Alert and remove text when attempting additional logins
+
+	$('#username').click(function () {
+		$("#username").val("");
+    	$(".alert").hide('fade');
+	});
+
+	$('#password').click(function () {
+		$("#password").val("");
+    	$(".alert").hide('fade');
+	});
 		
 });

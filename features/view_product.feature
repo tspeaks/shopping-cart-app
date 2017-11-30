@@ -13,4 +13,5 @@ Feature: View Product info
 		Then I should be taken to 'My Cart'
 		And an amount of the product equal to the amount toggle is added to My Cart
 
+
 	

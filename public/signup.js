@@ -24,6 +24,7 @@ $( document ).ready(function() {
 			window.location.replace('/login.html');
 
 		}).fail((err) => {
+			
 			console.log(err);
 		})
 

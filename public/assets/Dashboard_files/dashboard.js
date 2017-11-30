@@ -4,7 +4,6 @@ $( document ).ready(function() {
 const username = $.cookie('username');
 
 
-
 //Shipping Info Modal
 if ($.cookie('token')) {
 	$('#profile-modal').modal({

@@ -14,10 +14,10 @@ $( document ).ready(function() {
 
 	//Hats in Checkout
 	if(hat.count > 0) {
-		$('#hatThumbnail').html(`<img src="${hat.thumbnail}">`);
+		$('#hatThumbnail').html(`<img style="height: 65px" src="${'assets/hat.jpg'}">`);
 		$('#hatName').text(hat.name);
 		$('#hatCount').text(hat.count);
-		$('#hatPrice').text(hat.price * hat.count);
+		$('#hatPrice').text("$" + hat.price * hat.count);
 		$('#hatRemove').click(function() {
 			$('#checkoutHat').remove();
 			update();
@@ -28,10 +28,10 @@ $( document ).ready(function() {
 
 	//Shirts in Checkout
 	if(shirt.count > 0) {
-		$('#shirtThumbnail').html(`<img src="${shirt.thumbnail}">`);
+		$('#shirtThumbnail').html(`<img style="height: 65px" src="${'assets/shirt.jpg'}">`);
 		$('#shirtName').text(shirt.name);
 		$('#shirtCount').text(shirt.count);
-		$('#shirtPrice').text(shirt.price * shirt.count);
+		$('#shirtPrice').text("$" + shirt.price * shirt.count);
 		$('#shirtRemove').click(function() {
 			$('#checkoutShirt').remove();
 			update();
@@ -42,10 +42,10 @@ $( document ).ready(function() {
 
 	//Hoodies in Checkout
 	if(hoodie.count > 0) {
-		$('#hoodieThumbnail').html(`<img src="${hoodie.thumbnail}">`);
+		$('#hoodieThumbnail').html(`<img style="height: 65px" src="${'assets/hoodie.jpg'}">`);
 		$('#hoodieName').text(hoodie.name);
 		$('#hoodieCount').text(hoodie.count);
-		$('#hoodiePrice').text(hoodie.price * hoodie.count);
+		$('#hoodiePrice').text("$" + hoodie.price * hoodie.count);
 		$('#hoodieRemove').click(function() {
 			$('#checkoutHoodie').remove();
 			update();
@@ -56,10 +56,10 @@ $( document ).ready(function() {
 
 	//Mugs in Checkout
 	if(mug.count > 0) {
-		$('#mugThumbnail').html(`<img src="${mug.thumbnail}">`);
+		$('#mugThumbnail').html(`<img style="height: 65px" src="${'assets/mug.jpg'}">`);
 		$('#mugName').text(mug.name);
 		$('#mugCount').text(mug.count);
-		$('#mugPrice').text(mug.price * mug.count);
+		$('#mugPrice').text("$" + mug.price * mug.count);
 		$('#mugRemove').click(function() {
 			$('#checkoutMug').remove();
 			update();
@@ -70,10 +70,10 @@ $( document ).ready(function() {
 
 	//Mousepads in Checkout
 	if(mousepad.count > 0) {
-		$('#mousepadThumbnail').html(`<img src="${mousepad.thumbnail}">`);
+		$('#mousepadThumbnail').html(`<img style="height: 65px" src="${'assets/mousepad.jpg'}">`);
 		$('#mousepadName').text(mousepad.name);
 		$('#mousepadCount').text(mousepad.count);
-		$('#mousepadPrice').text(mousepad.price * mousepad.count);
+		$('#mousepadPrice').text("$" + mousepad.price * mousepad.count);
 		$('#mousepadRemove').click(function() {
 			$('#checkoutMousepad').remove();
 			update();
@@ -86,8 +86,11 @@ $( document ).ready(function() {
 	function update() {
 		if ($('#checkoutTable .product').length === 0) {
 
-		alert('You cannot check out without selecting any products to purchase');
-        window.location.replace('/dashboard.html');
+		$(".alert").show('fade');
+		$('.alert').on('close.bs.alert', function () {
+			window.location.replace('/dashboard.html');
+		})
+        
 	}
 }
 

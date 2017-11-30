@@ -17,6 +17,12 @@
 				<div class="row justify-content-center align-items-center inner">
 					<div class="col-sm-6 card" id="checkout">
 						<h4 class="card-title">Checkout</h4>
+							<div class="alert alert-danger alert-dismissible collapse" role="alert">
+								 <strong>Error!</strong> Returning to the dashboard, no items to purchase. &nbsp; &nbsp;
+								  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								    <span aria-hidden="true">&times;</span>
+								  </button>
+							</div>
 							<div class="card-body">
 								<table class="table" id="checkoutTable">
 									<thead>
@@ -25,56 +31,53 @@
 								      <th scope="col">Name</th>
 								      <th scope="col">Amount</th>
 								      <th scope="col">Price</th>
-								      <th scope="col">Submit</th>							   
+								      <th scope="col"></th>							   
 								    </tr>
 								  </thead>
 								  <tbody>
 									<tr class="product" id="checkoutHat">
-										<th scope="row"></th>
 										<td id="hatThumbnail"></td>
 										<td id="hatName"></td>
 										<td id="hatCount"></td>
 										<td id="hatPrice"></td>
-										<td id="hatButton"><button id="hatRemove">X</button></td>
+										<td id="hatButton"><button class="btn btn-secondary btn-sm" id="hatRemove">x</button></td>
 										</tr>
 
 									<tr class="product" id="checkoutShirt">
-										<th scope="row"></th>
 										<td id="shirtThumbnail"></td>
 										<td id="shirtName"></td>
 										<td id="shirtCount"></td>
 										<td id="shirtPrice"></td>
-										<td id="shirtButton"><button id="shirtRemove">X</button></td>
+										<td id="shirtButton"><button class="btn btn-secondary btn-sm" id="shirtRemove">x</button></td>
 										</tr>
 
 									<tr class="product" id="checkoutHoodie">
-										<th scope="row"></th>
 										<td id="hoodieThumbnail"></td>
 										<td id="hoodieName"></td>
 										<td id="hoodieCount"></td>
 										<td id="hoodiePrice"></td>
-										<td id="hoodieButton"><button id="hoodieRemove">X</button></td>
+										<td id="hoodieButton"><button class="btn btn-secondary btn-sm" id="hoodieRemove">x</button></td>
 										</tr>
 
 									<tr class="product" id="checkoutMug">
-										<th scope="row"></th>
 										<td id="mugThumbnail"></td>
 										<td id="mugName"></td>
 										<td id="mugCount"></td>
 										<td id="mugPrice"></td>
-										<td id="mugButton"><button id="mugRemove">X</button></td>
+										<td id="mugButton"><button class="btn btn-secondary btn-sm" id="mugRemove">x</button></td>
 										</tr>
 
 									<tr class="product" id="checkoutMousepad">
-										<th scope="row"></th>
 										<td id="mousepadThumbnail"></td>
 										<td id="mousepadName"></td>
 										<td id="mousepadCount"></td>
 										<td id="mousepadPrice"></td>
-										<td id="mousepadButton"><button id="mousepadRemove">X</button></td>
+										<td id="mousepadButton"><button class="btn btn-secondary btn-sm" id="mousepadRemove">x</button></td>
 										</tr>
+									<tr><td></td></tr>
 									</tbody>
 								</table>
+	
 
 								<form>
 									<div class="form-group">
@@ -94,11 +97,10 @@
 										<input class="form-control" name="zip" id="zip">
 									</div>
 									<div class="right">
-									<button class="btn btn-primary" id="purchase">Proceed with Checkout</button>
+									<button class="btn btn-primary" type="button" id="purchase">Confirm Purchase</button>
 									</div>
 								</form>
 
-								
 							</div>
 						</div>
 					</div>
