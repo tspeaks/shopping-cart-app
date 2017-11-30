@@ -11,65 +11,100 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-	<table id="checkoutTable">
-		<tr class="product" id="checkoutHat">
-			<td id="hatThumbnail"></td>
-			<td id="hatName"></td>
-			<td id="hatCount"></td>
-			<td id="hatPrice"></td>
-			<td id="hatButton"><button id="hatRemove">X</button></td>
-			</tr>
+	<div class="container">
+		<div class="row wrapper">
+			<div class="col-md-12 inner">
+				<div class="row justify-content-center align-items-center inner">
+					<div class="col-sm-6 card" id="checkout">
+						<h4 class="card-title">Checkout</h4>
+							<div class="card-body">
+								<table class="table" id="checkoutTable">
+									<thead>
+								    <tr>
+								      <th scope="col">Item</th>
+								      <th scope="col">Name</th>
+								      <th scope="col">Amount</th>
+								      <th scope="col">Price</th>
+								      <th scope="col">Submit</th>							   
+								    </tr>
+								  </thead>
+								  <tbody>
+									<tr class="product" id="checkoutHat">
+										<th scope="row"></th>
+										<td id="hatThumbnail"></td>
+										<td id="hatName"></td>
+										<td id="hatCount"></td>
+										<td id="hatPrice"></td>
+										<td id="hatButton"><button id="hatRemove">X</button></td>
+										</tr>
 
-		<tr class="product" id="checkoutShirt">
-			<td id="shirtThumbnail"></td>
-			<td id="shirtName"></td>
-			<td id="shirtCount"></td>
-			<td id="shirtPrice"></td>
-			<td id="shirtButton"><button id="shirtRemove">X</button></td>
-			</tr>
+									<tr class="product" id="checkoutShirt">
+										<th scope="row"></th>
+										<td id="shirtThumbnail"></td>
+										<td id="shirtName"></td>
+										<td id="shirtCount"></td>
+										<td id="shirtPrice"></td>
+										<td id="shirtButton"><button id="shirtRemove">X</button></td>
+										</tr>
 
-		<tr class="product" id="checkoutHoodie">
-			<td id="hoodieThumbnail"></td>
-			<td id="hoodieName"></td>
-			<td id="hoodieCount"></td>
-			<td id="hoodiePrice"></td>
-			<td id="hoodieButton"><button id="hoodieRemove">X</button></td>
-			</tr>
+									<tr class="product" id="checkoutHoodie">
+										<th scope="row"></th>
+										<td id="hoodieThumbnail"></td>
+										<td id="hoodieName"></td>
+										<td id="hoodieCount"></td>
+										<td id="hoodiePrice"></td>
+										<td id="hoodieButton"><button id="hoodieRemove">X</button></td>
+										</tr>
 
-		<tr class="product" id="checkoutMug">
-			<td id="mugThumbnail"></td>
-			<td id="mugName"></td>
-			<td id="mugCount"></td>
-			<td id="mugPrice"></td>
-			<td id="mugButton"><button id="mugRemove">X</button></td>
-			</tr>
+									<tr class="product" id="checkoutMug">
+										<th scope="row"></th>
+										<td id="mugThumbnail"></td>
+										<td id="mugName"></td>
+										<td id="mugCount"></td>
+										<td id="mugPrice"></td>
+										<td id="mugButton"><button id="mugRemove">X</button></td>
+										</tr>
 
-		<tr class="product" id="checkoutMousepad">
-			<td id="mousepadThumbnail"></td>
-			<td id="mousepadName"></td>
-			<td id="mousepadCount"></td>
-			<td id="mousepadPrice"></td>
-			<td id="mousepadButton"><button id="mousepadRemove">X</button></td>
-			</tr>
-		
-	</table>
+									<tr class="product" id="checkoutMousepad">
+										<th scope="row"></th>
+										<td id="mousepadThumbnail"></td>
+										<td id="mousepadName"></td>
+										<td id="mousepadCount"></td>
+										<td id="mousepadPrice"></td>
+										<td id="mousepadButton"><button id="mousepadRemove">X</button></td>
+										</tr>
+									</tbody>
+								</table>
 
-	<form>
-		<label for="ccname">Name</label>
-		<input name="ccname" id="ccname">
+								<form>
+									<div class="form-group">
+										<label for="ccname">Name</label>
+										<input class="form-control" name="ccname" id="ccname">
+									</div>
+									<div class="form-group">
+										<label for="ccnumber">Card #</label>
+										<input class="form-control" name="ccnumber" id="ccnumber">
+									</div>
+									<div class="form-group">
+										<label for="cvc">CVC</label>
+										<input class="form-control" name="cvc" id="cvc">
+									</div>
+									<div class="form-group">
+										<label for="zip">Billing Zipcode</label>
+										<input class="form-control" name="zip" id="zip">
+									</div>
+									<div class="right">
+									<button class="btn btn-primary" id="purchase">Proceed with Checkout</button>
+									</div>
+								</form>
 
-		<label for="ccnumber">Card #</label>
-		<input name="ccnumber" id="ccnumber">
-
-		<label for="cvc">CVC</label>
-		<input name="cvc" id="cvc">
-
-		<label for="zip">Billing Zipcode</label>
-		<input name="zip" id="zip">
-	</form>
-
-	<button id="purchase">Proceed with Checkout</button>
-
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	<script src="checkout.js"></script>
 </body>
 </html>

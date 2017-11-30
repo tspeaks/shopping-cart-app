@@ -32,14 +32,14 @@ router.put('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 	})
 });
 
-router.delete('/', (req, res) => {
-	const username = $.cookie('username');
-	User.remove({username})
+router.delete('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+	User.findByIdAndRemove(req.user._id)
 
     .then(user => {
     	console.log('success');
-		res.sendStatus(200);
-
+		return res.json({
+			success: true
+		})
     })
     .catch((err) => {
         console.log(err);

@@ -48,6 +48,36 @@ if ($.cookie('token')) {
 
 	});
 
+//Cancel My Account
+	$("#remove").click(function (event) {
+		event.preventDefault();
+		$.ajax( {
+			method: 'DELETE',
+			url: 'http://localhost:3000/users/',
+			dataType: 'json',
+			headers: {
+				'Content-type': 'application/json',
+				'Authorization': `bearer ${$.cookie('token')}`
+			}
+
+		})
+		.then((res) => { 
+			$.removeCookie('token');
+			$.removeCookie('username');
+			console.log(res);
+			console.log("see me");
+			window.location.replace('/signup.html');
+
+		}).fail((err) => {
+			console.log(err);
+			console.log("see me fail");
+		})
+
+
+		
+
+	});
+
 		
 
 

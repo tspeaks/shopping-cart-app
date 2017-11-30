@@ -20,9 +20,8 @@ $( document ).ready(function() {
 
 		})
 		.then((res) => {
-			$.cookie('token', res.token);
-			$.cookie('username', username, { expires: 14 });
-			window.location.replace('/dashboard.html');
+			console.log(res);
+			window.location.replace('/login.html');
 
 		}).fail((err) => {
 			console.log(err);
