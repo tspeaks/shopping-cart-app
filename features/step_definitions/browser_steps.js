@@ -34,8 +34,8 @@ defineSupportCode(function({Given, When, Then}) {
            callback();
          });
 
-When('I press {string}', function (type, callback) {
-           this.driver.findElement(By.css(`#login>button`)).click();
+When('I press {string}', function (id, callback) {
+           this.driver.findElement(By.css(`button#${id}`)).click();
            callback();
          });
 
@@ -73,7 +73,7 @@ Given('that I am logged in to my account', function (callback) {
          return this.driver.findElement(By.css(`input#password`)).sendKeys('datpass')
       
       }).then(() => {
-        return this.driver.findElement(By.css(`#login>button`)).click();
+        return this.driver.findElement(By.css(`button#submit`)).click();
       }).then(() => {
         callback();
       })

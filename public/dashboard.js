@@ -1,12 +1,16 @@
 $( document ).ready(function() {
-
 //Username Cookie
 const username = $.cookie('username');
+
+//Hide Modal if User information has been updated
+if($.cookie('updated') === 'true') {
+	$('#profile-modal').modal("hide");
+}
 
 
 
 //Shipping Info Modal
-if ($.cookie('token')) {
+if ($.cookie('token') && ($.cookie('updated') === 'false')) {
 	$('#profile-modal').modal({
 		show: true,
 		backdrop: 'static'
@@ -15,8 +19,6 @@ if ($.cookie('token')) {
 }
 
 //Dashboard form
-
-
 	$("#info").submit(function (event) {
 		event.preventDefault();
 		$.ajax( {
@@ -39,6 +41,7 @@ if ($.cookie('token')) {
 		})
 		.then((res) => { 
 			console.log(res);
+			$.cookie('updated', true);
 			$('#profile-modal').modal("hide");
 
 		}).fail((err) => {
@@ -289,11 +292,11 @@ $('#checkout').click(function() {
 	if(hat.count==0 && shirt.count==0 && hoodie.count==0 && mug.count==0 && mousepad.count==0) {
 		$(".alert").show('fade');
 	} else {
-	sessionStorage.hat = JSON.stringify(hat);
-	sessionStorage.shirt = JSON.stringify(shirt);
-	sessionStorage.hoodie = JSON.stringify(hoodie);
-	sessionStorage.mug = JSON.stringify(mug);
-	sessionStorage.mousepad = JSON.stringify(mousepad);
-	window.location.replace('/checkout.html');
+		sessionStorage.hat = JSON.stringify(hat);
+		sessionStorage.shirt = JSON.stringify(shirt);
+		sessionStorage.hoodie = JSON.stringify(hoodie);
+		sessionStorage.mug = JSON.stringify(mug);
+		sessionStorage.mousepad = JSON.stringify(mousepad);
+		window.location.replace('/checkout.html');
 	}
 })

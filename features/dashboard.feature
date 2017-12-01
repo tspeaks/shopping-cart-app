@@ -3,7 +3,7 @@ Feature: Dashboard]
 	I want to be able to log in to the app
 	So that I can buy all the thingss
 	
-	Scenario: Landing on the dashboard after initial sign-up
+	Scenario: Landing on the dashboard after initial login
 		Given that I am logged in to my account
 		When I go to the dashboard page
 		Then I should see a 'info' 'form'

@@ -22,6 +22,7 @@ $( document ).ready(function() {
 		.then((res) => {
 			$.cookie('token', res.token);
 			$.cookie('username', username, { expires: 14 });
+			$.cookie('updated', false);
 			window.location.replace('/dashboard.html');
 
 		}).fail((err) => {
