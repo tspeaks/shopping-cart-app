@@ -4,6 +4,8 @@ sudo: required
 env: DISPLAY=':99.0'
 dist: trusty
 addons:
+services:
+  -mongdb
   apt:
     sources:
       - google-chrome
