@@ -21,6 +21,13 @@ Feature: Dashboard]
 		When I fill in the 'phone-number' input with '012-345-6789'
 		When I fill in the 'email' input with 'your@mom.com'
 		And I press 'submit'
+
+	Scenario: Remove my Account
+		Given that I am logged in to my account
+		When I go to the dashboard page
+		And I see a 'remove' 'button'
+		And I press the 'remove' 'button'
+		Then the current user should be deleted
 		
 
 

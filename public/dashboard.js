@@ -69,6 +69,7 @@ if ($.cookie('token') && ($.cookie('updated') === 'false')) {
 		.then((res) => { 
 			$.removeCookie('token');
 			$.removeCookie('username');
+			$.removeCookie('updated');
 			console.log(res);
 			console.log("see me");
 			window.location.replace('/signup.html');

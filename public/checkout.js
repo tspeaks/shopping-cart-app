@@ -94,9 +94,10 @@ $( document ).ready(function() {
 	}
 }
 
-	//Proceed with Checkout
+	//Confirm Purchase
 	$('#purchase').click(function() {
 		window.location.replace('/dashboard.html');
+		$(".alert").show('fade');
 	})
 })
 
