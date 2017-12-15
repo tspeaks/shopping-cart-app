@@ -24,10 +24,12 @@ app.use(function(req, res, next) {
 });
 // Listen for requests
 	
-
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public', 'dashboard.html' ));
+}) 
 app.use('/sessions', require('./routes/sessions')(passport));
 app.use('/users', require('./routes/users')(passport));
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
