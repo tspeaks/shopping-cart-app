@@ -18,7 +18,7 @@ if ($.cookie('token') && ($.cookie('updated') === 'false')) {
 	
 }
 
-if ($.cookie('token') === false) {
+if (!$.cookie('token')) {
 	window.location.replace('/signup.html');
 }
 
