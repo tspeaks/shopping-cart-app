@@ -18,6 +18,10 @@ if ($.cookie('token') && ($.cookie('updated') === 'false')) {
 	
 }
 
+if ($.cookie('token') === false) {
+	window.location.replace('/signup.html');
+}
+
 //Dashboard form
 	$("#info").submit(function (event) {
 		event.preventDefault();
