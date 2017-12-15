@@ -13,7 +13,7 @@ const path = require('path')
 
 
 // Define the port to run on
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
