@@ -27,7 +27,7 @@ if (!$.cookie('token')) {
 		event.preventDefault();
 		$.ajax( {
 			method: 'PUT',
-			url: `${process.env.API_HOST}/users`,
+			url: `/users`,
 			data:JSON.stringify({
 				address: $('#address').val(),
 				city: $('#city').val(),
@@ -62,7 +62,7 @@ if (!$.cookie('token')) {
 		event.preventDefault();
 		$.ajax( {
 			method: 'DELETE',
-			url: `${process.env.API_HOST}/users`,
+			url: `/users`,
 			dataType: 'json',
 			headers: {
 				'Content-type': 'application/json',
