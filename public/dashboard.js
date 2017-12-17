@@ -27,7 +27,7 @@ if (!$.cookie('token')) {
 		event.preventDefault();
 		$.ajax( {
 			method: 'PUT',
-			url: 'http://localhost:3000/users/',
+			url: `${process.env.API_HOST}/users`,
 			data:JSON.stringify({
 				address: $('#address').val(),
 				city: $('#city').val(),
@@ -62,7 +62,7 @@ if (!$.cookie('token')) {
 		event.preventDefault();
 		$.ajax( {
 			method: 'DELETE',
-			url: 'http://localhost:3000/users/',
+			url: `${process.env.API_HOST}/users`,
 			dataType: 'json',
 			headers: {
 				'Content-type': 'application/json',

@@ -1,4 +1,4 @@
-Feature: Dashboard]
+Feature: Dashboard
 	As a user
 	I want to be able to log in to the app
 	So that I can buy all the thingss

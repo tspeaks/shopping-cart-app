@@ -7,7 +7,7 @@ $( document ).ready(function() {
 		console.log("i work");
 		$.ajax( {
 			method: 'POST',
-			url: 'http://localhost:3000/users',
+			url: `${process.env.API_HOST}/users`,
 			data:JSON.stringify({
 				username: username,
 				password: $('#password').val()
