@@ -21,3 +21,13 @@ html, body, .container, .wrapper, .inner {
 	text-align: right;
 }
 
+.modal-backdrop {
+   background-color: rgb(229, 221, 206);
+}
+.modal-title {
+	margin-top: 33px;
+}
+
+#cartPic {
+	height: 100px;
+}

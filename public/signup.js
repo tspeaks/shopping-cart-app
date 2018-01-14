@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+	$('#welcome-modal').modal({
+		show: true,
+		
+	});
+
 	//Signup
 	$("#signup").submit(function (event) {
 		const username = $('#username').val()
