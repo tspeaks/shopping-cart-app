@@ -5,6 +5,9 @@ $( document ).ready(function() {
 		
 	});
 
+
+
+
 	//Signup
 	$("#signup").submit(function (event) {
 		const username = $('#username').val()
@@ -39,5 +42,7 @@ $( document ).ready(function() {
 	});
 
 		
+
+
 });
 

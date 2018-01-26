@@ -19,6 +19,7 @@ html, body, .container, .wrapper, .inner {
 
 .right {
 	text-align: right;
+
 }
 
 .modal-backdrop {
@@ -31,3 +32,12 @@ html, body, .container, .wrapper, .inner {
 #cartPic {
 	height: 100px;
 }
+
+
+
+#login {
+
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
