@@ -103,7 +103,7 @@ $(function () {
 //Logout Button
 $('#logout').click(function() {
 	window.location.replace('/login.html');
-}
+})
 
 //View Products
 
